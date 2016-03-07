@@ -21,6 +21,10 @@ Gem::Specification.new do |spec|
 
   # Runtime Dependencies
   spec.add_runtime_dependency "gli", "~> 2.13"
+  spec.add_runtime_dependency "guard", "~> 2.13"
+  spec.add_runtime_dependency "guard-livereload", "~> 2.4"
+  spec.add_runtime_dependency "rack", "~> 1.6"
+  spec.add_runtime_dependency "rack-livereload", "~> 0.3"
 
   # Development Dependencies
   spec.add_development_dependency "bundler", "~> 1.11"
