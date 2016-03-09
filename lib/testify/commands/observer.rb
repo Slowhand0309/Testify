@@ -12,9 +12,9 @@ module Testify
         @tasks << task
       end
 
-      def notify()
+      def notify(args = nil)
         @tasks.each do |t|
-          t.call(self)
+          t.call(self, args)
         end
       end
     end
