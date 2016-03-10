@@ -2,3 +2,28 @@
 
 require "gli"
 require "testify"
+
+class TestifyExecutable
+  extend GLI::App
+
+  version Testify::VERSION
+
+  desc 'Start server for testify'
+  command :s, :server do |cmd|
+
+    cmd.desc 'Server listen port'
+    cmd.flag [:p, :port], default_value: 9292
+    cmd.action do |_, options, _|
+      Testify::Commands::Server.new(options[:port]).run
+    end
+  end
+
+  desc 'Start testify'
+  command :start do |cmd|
+
+    cmd.action do |_, options, _|
+    end
+  end
+
+  exit run(ARGV)
+end

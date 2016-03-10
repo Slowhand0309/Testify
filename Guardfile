@@ -19,3 +19,7 @@ guard 'livereload' do
   # file needing a full reload of the page anyway
   watch(%r{__output/.+\.(#{exts * '|'})$})
 end
+
+guard 'rake', :task => 'testify:run' do
+  watch(%r{basket/*.*})
+end
