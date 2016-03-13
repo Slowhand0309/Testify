@@ -3,11 +3,13 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'testify/commands/observer'
 
 class Executer
-  include Testify::Commands::Observer
+  extend Testify::Commands::Observer
 
   def self.run(args = nil)
-    # TODO setup
+    setup()
 
+    # add tasks
+    
     notify(args)
   end
 end

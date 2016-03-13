@@ -4,7 +4,7 @@ module Testify
   module Commands
     module Observer
 
-      def initialize()
+      def setup()
         @tasks = []
       end
 
@@ -16,6 +16,7 @@ module Testify
         @tasks.each do |t|
           t.call(self, args)
         end
+        puts "notify"
       end
     end
   end
