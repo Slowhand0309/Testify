@@ -14,7 +14,7 @@ class TestifyExecutable
     cmd.desc 'Server listen port'
     cmd.flag [:p, :port], default_value: 9292
     cmd.action do |_, options, _|
-      Testify::Commands::Server.new(options[:port]).run
+      Testify::Commands.server(options[:port])
     end
   end
 
@@ -22,6 +22,7 @@ class TestifyExecutable
   command :start do |cmd|
 
     cmd.action do |_, options, _|
+      Testify::Commands.start
     end
   end
 
