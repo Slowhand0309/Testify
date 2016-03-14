@@ -1,3 +1,4 @@
+notification :off
 
 guard 'livereload' do
   extensions = {
