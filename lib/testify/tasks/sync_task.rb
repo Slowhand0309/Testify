@@ -3,7 +3,7 @@
 # TODO sync work dir to __output dir
 module Testify
   module Tasks
-    class SyncTask
+    class SyncTask < BaseTask
 
       SEPARATOR = '/'.freeze
 

@@ -16,7 +16,6 @@ module Testify
         @tasks.each do |t|
           t.call(self, args)
         end
-        puts "notify"
       end
     end
   end

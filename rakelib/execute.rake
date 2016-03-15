@@ -9,7 +9,7 @@ class Executer
     setup()
 
     # add tasks
-    
+
     notify(args)
   end
 end
@@ -17,7 +17,6 @@ end
 namespace :testify do
   desc 'Run tasks for testify'
   task :run do |t, args|
-    puts "t:#{t}, args:#{args}"
     Executer.run(args)
   end
 end

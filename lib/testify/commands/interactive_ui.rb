@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'testify/tasks'
 
 module Testify
   module Commands
@@ -19,7 +20,8 @@ module Testify
           when /[Ee]xit/
             break
           when /\d{1,3}(-\d{1,3})?(-\d{1,3})?/
-            puts "match number"
+            # generate tree
+            Testify::Tasks::GenTreeTask.new(input_str).run
           else
             # continue...
           end
