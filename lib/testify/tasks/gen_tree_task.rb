@@ -5,7 +5,6 @@ module Testify
   module Tasks
     class GenTreeTask < BaseTask
 
-      OUTPUT_DIR = '__output'.freeze
       SPLIT_SEPARATOR = '-'.freeze
 
       def initialize(no, separator = SPLIT_SEPARATOR)
