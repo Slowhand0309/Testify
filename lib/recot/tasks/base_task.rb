@@ -8,7 +8,7 @@ module Recot
 
     class BaseTask
 
-      def run
+      def run(args = nil)
       end
 
     end

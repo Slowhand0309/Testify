@@ -4,17 +4,19 @@ module Recot
   module Commands
     module Observer
 
-      def setup()
-        @tasks = []
+      def self.extended(base)
+        base.class_eval do
+          @tasks = []
+        end
       end
 
-      def add_task(&task)
+      def add_task(task)
         @tasks << task
       end
 
       def notify(args = nil)
         @tasks.each do |t|
-          t.call(self, args)
+          t.run(args)
         end
       end
     end

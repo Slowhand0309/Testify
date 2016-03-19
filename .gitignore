@@ -38,3 +38,5 @@ Gemfile.lock
 # output directory for recot
 /__output/
 /basket/
+.cahce
+access.log

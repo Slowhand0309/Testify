@@ -1,15 +1,14 @@
 # coding: utf-8
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'recot/commands/observer'
+require 'recot/tasks'
 
 class Executer
   extend Recot::Commands::Observer
 
+  add_task Recot::Tasks::SyncTask.new
+  
   def self.run(args = nil)
-    setup()
-
-    # add tasks
-
     notify(args)
   end
 end

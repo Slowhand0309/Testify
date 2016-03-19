@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'fileutils'
+require 'recot/cache/number_cache'
 
 module Recot
   module Tasks
@@ -13,13 +14,15 @@ module Recot
         @split_separator = separator
       end
 
-      def run
+      def run(args = nil)
         # split
         no_dir = @test_no.split(@split_separator).join('/')
         # generate test no tree
         path = "#{@user_root}/#{OUTPUT_DIR}/#{no_dir}"
         unless File.exists?(path)
           FileUtils.mkdir_p(path)
+          # cache current number
+          Recot::Cache::NumberCache.store(@test_no)
         end
       end
     end
