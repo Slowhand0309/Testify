@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'testify/version'
+require 'recot/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "testify"
-  spec.version       = Testify::VERSION
+  spec.name          = "recot"
+  spec.version       = Recot::VERSION
   spec.authors       = ["slowhand0309"]
   spec.email         = ["slowhand0309@gmail.com"]
 
-  spec.summary       = 'Testify is a tool to gather evidence of the test'
+  spec.summary       = 'Recot is a tool to gather evidence of the test'
   spec.description   = 'To generate a test result of documents in HTML format automatically'
-  spec.homepage      = 'https://github.com/Slowhand0309/testify'
+  spec.homepage      = 'https://github.com/Slowhand0309/recot'
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

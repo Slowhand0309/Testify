@@ -21,6 +21,6 @@ guard 'livereload' do
   watch(%r{__output/.+\.(#{exts * '|'})$})
 end
 
-guard 'rake', :task => 'testify:run' do
+guard 'rake', :task => 'recot:run' do
   watch(%r{basket/*.*})
 end

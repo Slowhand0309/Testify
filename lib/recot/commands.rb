@@ -1,13 +1,13 @@
 # coding: utf-8
 
-require 'testify/commands/rack_server'
-require 'testify/commands/guard_server'
-require 'testify/commands/interactive_ui'
+require 'recot/commands/rack_server'
+require 'recot/commands/guard_server'
+require 'recot/commands/interactive_ui'
 
-module Testify
+module Recot
   module Commands
 
-    # start testify
+    # start recot
     def self.start
       # start guard server
       GuardServer.new.run

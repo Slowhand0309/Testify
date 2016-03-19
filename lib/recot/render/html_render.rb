@@ -1,6 +1,6 @@
 # coding: utf-8
 
-module Testify
+module Recot
   module Render
     class HtmlRender
     end

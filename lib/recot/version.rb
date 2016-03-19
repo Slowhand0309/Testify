@@ -1,5 +1,5 @@
 # coding: utf-8
 
-module Testify
+module Recot
   VERSION = "0.1.0"
 end

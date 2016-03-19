@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'fileutils'
 
-module Testify
+module Recot
   module Tasks
     class GenTreeTask < BaseTask
 

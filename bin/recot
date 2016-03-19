@@ -1,28 +1,28 @@
 #!/usr/bin/env ruby
 
 require "gli"
-require "testify"
+require "recot"
 
-class TestifyExecutable
+class RecotExecutable
   extend GLI::App
 
-  version Testify::VERSION
+  version Recot::VERSION
 
-  desc 'Start server for testify'
+  desc 'Start server for recot'
   command :s, :server do |cmd|
 
     cmd.desc 'Server listen port'
     cmd.flag [:p, :port], default_value: 9292
     cmd.action do |_, options, _|
-      Testify::Commands.server(options[:port])
+      Recot::Commands.server(options[:port])
     end
   end
 
-  desc 'Start testify'
+  desc 'Start recot'
   command :start do |cmd|
 
     cmd.action do |_, options, _|
-      Testify::Commands.start
+      Recot::Commands.start
     end
   end
 

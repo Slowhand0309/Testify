@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'guard/cli'
 
-module Testify
+module Recot
   module Commands
     class GuardServer
 

@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'active_support'
 
-module Testify
+module Recot
   module Cache
 
     CACHE_FILE = '.cahce'.freeze

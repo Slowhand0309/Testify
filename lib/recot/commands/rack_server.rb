@@ -3,7 +3,7 @@ require 'rack'
 require 'rack/livereload'
 require 'logger'
 
-module Testify
+module Recot
   module Commands
     class RackServer
 

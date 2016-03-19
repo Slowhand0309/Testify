@@ -1,9 +1,9 @@
 # coding: utf-8
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'testify/commands/observer'
+require 'recot/commands/observer'
 
 class Executer
-  extend Testify::Commands::Observer
+  extend Recot::Commands::Observer
 
   def self.run(args = nil)
     setup()
@@ -14,8 +14,8 @@ class Executer
   end
 end
 
-namespace :testify do
-  desc 'Run tasks for testify'
+namespace :recot do
+  desc 'Run tasks for recot'
   task :run do |t, args|
     Executer.run(args)
   end
