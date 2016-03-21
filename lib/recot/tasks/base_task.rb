@@ -5,6 +5,10 @@ module Recot
 
     class BaseTask
 
+      def initialize
+        @user_root = Dir.pwd
+      end
+
       def run(args = nil)
       end
 

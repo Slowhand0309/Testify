@@ -28,7 +28,11 @@ module Recot
 
       def notify(files)
         return if files.empty?
-        Recot::Tasks::SyncTask.new.run
+        # run all tasks
+        Recot::Tasks::ALL_TASKS.each do |t|
+          cls = Object.const_get("Recot::Tasks::#{t}")
+          cls.new.run(files)
+        end
       end
 
       def stop

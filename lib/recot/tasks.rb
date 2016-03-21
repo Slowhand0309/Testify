@@ -4,8 +4,7 @@ require 'recot/tasks/sync_task'
 
 module Recot
   module Tasks
-    def self.all()
-      %i(sync_task)
-    end
+    # declare all task
+    ALL_TASKS = %w(SyncTask)
   end
 end

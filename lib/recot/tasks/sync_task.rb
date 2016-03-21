@@ -10,7 +10,7 @@ module Recot
       SEPARATOR = '/'.freeze
 
       def initialize()
-        @user_root = Dir.pwd
+        super
       end
 
       def run(args = nil)
@@ -23,7 +23,8 @@ module Recot
           move(path)
         end
       end
-
+      
+private
       def move(path)
         # move all
         FileUtils.mv(Dir.glob("#{@user_root}/#{BASKET_DIR}/*"),"#{path}/")
