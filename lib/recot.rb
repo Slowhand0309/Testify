@@ -1,6 +1,7 @@
 # coding: utf-8
 require 'recot/version'
 require 'recot/commands'
+require 'recot/tasks'
 
 module Recot
 
