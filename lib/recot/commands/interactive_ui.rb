@@ -1,5 +1,5 @@
 # coding: utf-8
-require 'recot/tasks'
+require 'recot/commands/tree_generator'
 
 module Recot
   module Commands
@@ -21,7 +21,7 @@ module Recot
             break
           when /\d{1,3}(-\d{1,3})?(-\d{1,3})?/
             # generate tree
-            Recot::Tasks::GenTreeTask.new(input_str).run
+            TreeGenerator.generate(input_str)
           else
             # continue...
           end

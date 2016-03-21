@@ -3,6 +3,7 @@
 require 'recot/commands/rack_server'
 require 'recot/commands/guard_server'
 require 'recot/commands/interactive_ui'
+require 'recot/commands/listener'
 
 module Recot
   module Commands
@@ -17,6 +18,9 @@ module Recot
         RackServer.new.run
       end
 
+      # start listener
+      Listener.new.run
+      
       # start interactive operate
       InteractiveUi.new.start
     end

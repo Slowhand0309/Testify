@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "guard-livereload", "~> 2.4"
   spec.add_runtime_dependency "rack", "~> 1.6"
   spec.add_runtime_dependency "rack-livereload", "~> 0.3"
-  spec.add_runtime_dependency "guard-rake", "~> 1.0"
+  spec.add_runtime_dependency "listen", "~> 3.0"
   spec.add_runtime_dependency "activesupport", "~> 4.0"
 
   # Development Dependencies

@@ -3,5 +3,11 @@ require 'recot/version'
 require 'recot/commands'
 
 module Recot
-  # Your code goes here...
+
+  # generate files directory
+  OUTPUT_DIR = '__output'.freeze
+
+  # throw evidence directory
+  BASKET_DIR = 'basket'.freeze
+
 end
