@@ -7,17 +7,16 @@ module Recot
   module Tasks
     class SyncTask < BaseTask
 
-      OUTPUT_DIR = "#{Dir.pwd}/__output".freeze
-      BASKET_DIR = "#{Dir.pwd}/basket".freeze
       SEPARATOR = '/'.freeze
 
       def initialize()
+        @user_root = Dir.pwd
       end
 
       def run(args = nil)
         # read current test number from cache
         test_no = Recot::Cache::NumberCache.restore
-        path = "#{OUTPUT_DIR}/#{test_no}"
+        path = "#{@user_root}/#{OUTPUT_DIR}/#{test_no}"
         unless File.exist?(path)
           $stderr.puts "unkown #{path} directory."
         else
@@ -27,7 +26,7 @@ module Recot
 
       def copy(path)
         # copy all
-        FileUtils.cp_r(Dir.glob("#{BASKET_DIR}/*"),"#{path}/")
+        FileUtils.cp_r(Dir.glob("#{@user_root}/#{BASKET_DIR}/*"),"#{path}/")
       end
 
     end
