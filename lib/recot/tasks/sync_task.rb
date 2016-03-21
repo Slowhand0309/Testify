@@ -20,13 +20,13 @@ module Recot
         unless File.exist?(path)
           $stderr.puts "unkown #{path} directory."
         else
-          copy(path)
+          move(path)
         end
       end
 
-      def copy(path)
-        # copy all
-        FileUtils.cp_r(Dir.glob("#{@user_root}/#{BASKET_DIR}/*"),"#{path}/")
+      def move(path)
+        # move all
+        FileUtils.mv(Dir.glob("#{@user_root}/#{BASKET_DIR}/*"),"#{path}/")
       end
 
     end
