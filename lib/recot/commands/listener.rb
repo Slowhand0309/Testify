@@ -7,11 +7,10 @@ module Recot
     class Listener
 
       def initialize(ignore = nil)
-        @path = "#{Dir.pwd}/#{BASKET_DIR}"
       end
 
       def run
-        @listener = ::Listen.to(@path) do |mod, add, del|
+        @listener = ::Listen.to(Recot.basket_dir) do |mod, add, del|
           on_modifyed(mod)
           on_added(add)
         end

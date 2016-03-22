@@ -2,8 +2,13 @@
 
 module Recot
   module Tasks
-    # task for update index.html
+
+    # Task for update index.html.
     class IndexdocTask < BaseTask
+
+      def run(args = nil)
+      end
+
     end
   end
 end

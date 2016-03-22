@@ -12,6 +12,20 @@ module Recot
       def run(args = nil)
       end
 
+protected
+
+      # Get current evidence path.
+      #
+      # == Returns:
+      # A string of evidence path.
+      # If not cached test no return empty string.
+      def evidence_path()
+        test_no = Recot::Cache::NumberCache.restore
+        unless test_no
+          return "" # return empty string
+        end
+        "#{Recot.resources_dir}/#{test_no}"
+      end
     end
   end
 end

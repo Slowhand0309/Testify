@@ -14,20 +14,19 @@ module Recot
       end
 
       def run(args = nil)
-        # read current test number from cache
-        test_no = Recot::Cache::NumberCache.restore
-        path = "#{@user_root}/#{OUTPUT_DIR}/#{test_no}"
+        # get evidence path
+        path = evidence_path()
         unless File.exist?(path)
           $stderr.puts "unkown #{path} directory."
         else
           move(path)
         end
       end
-      
+
 private
       def move(path)
         # move all
-        FileUtils.mv(Dir.glob("#{@user_root}/#{BASKET_DIR}/*"),"#{path}/")
+        FileUtils.mv(Dir.glob("#{Recot.basket_dir}/*"),"#{path}/")
       end
 
     end

@@ -12,7 +12,7 @@ module Recot
         # split
         no_dir = test_no.split(SPLIT_SEPARATOR).join('/')
         # generate test no tree
-        path = "#{Dir.pwd}/#{OUTPUT_DIR}/#{no_dir}"
+        path = "#{Recot.resources_dir}/#{no_dir}"
         unless File.exists?(path)
           FileUtils.mkdir_p(path)
           # cache current number
