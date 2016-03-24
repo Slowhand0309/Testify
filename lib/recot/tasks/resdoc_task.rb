@@ -53,7 +53,7 @@ private
       # == Returns:
       # A path of resdoc. If not cached return 'unkown.html'.
       def resdoc_path
-        test_no = Recot::Cache::NumberCache.restore
+        test_no = Recot::Cache::StateCache.restore_no
         test_no ||= 'unkown'
 
         "#{Recot.resources_dir}/#{test_no}.html"

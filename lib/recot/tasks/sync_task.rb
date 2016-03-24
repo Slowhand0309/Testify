@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'fileutils'
-require 'recot/cache/number_cache'
+require 'recot/cache/state_cache'
 
 # TODO sync work dir to __output dir
 module Recot

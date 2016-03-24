@@ -20,7 +20,7 @@ protected
       # A string of evidence path.
       # If not cached test no return empty string.
       def evidence_path()
-        test_no = Recot::Cache::NumberCache.restore
+        test_no = Recot::Cache::StateCache.restore_no
         unless test_no
           return "" # return empty string
         end

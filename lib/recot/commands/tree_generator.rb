@@ -1,6 +1,6 @@
 # coding: utf-8
 require 'fileutils'
-require 'recot/cache/number_cache'
+require 'recot/cache/state_cache'
 
 module Recot
   module Commands
@@ -16,7 +16,7 @@ module Recot
         unless File.exists?(path)
           FileUtils.mkdir_p(path)
           # cache current number
-          Recot::Cache::NumberCache.store(test_no)
+          Recot::Cache::StateCache.store_no(test_no)
         end
       end
     end
