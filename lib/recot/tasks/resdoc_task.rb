@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'recot/cache/state_cache'
 require 'recot/render/html_render'
 
 module Recot
@@ -38,6 +39,9 @@ private
         data = {}
         data[:title] = get_testno()
         data[:files] = files
+
+        # Cached evidence files
+        Recot::Cache::StateCache.store_recent_evidence(files)
 
         # Render
         Recot::Render::HtmlRender.new.render_resdoc(data, resdoc_path)

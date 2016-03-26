@@ -5,8 +5,26 @@ module Recot
   module Render
     class HtmlRender
 
+      # Path of indexdoc template.
+      INDEXDOC_TEMPLATE = "#{Dir.pwd}/template/index.html.erb".freeze
+
       # Path of resdoc template.
       RESDOC_TEMPLATE = "#{Dir.pwd}/template/resdoc.html.erb".freeze
+
+      # Render index html file.
+      #
+      # == Parameters:
+      # data::
+      #   Hash object of binding data.
+      # out_file::
+      #   Path of index html file.
+      def render_indexdoc(data, out_file)
+        unless data
+          $stderr.puts "binding args invalid : #{data}"
+        else
+          render(INDEXDOC_TEMPLATE, out_file, data)
+        end
+      end
 
       # Render resource html file.
       #
