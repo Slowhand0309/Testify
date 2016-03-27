@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'recot/tasks/base_task'
 
 module Recot
   module Tasks

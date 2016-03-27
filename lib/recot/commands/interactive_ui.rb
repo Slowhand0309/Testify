@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'recot/commands/recent_cancel'
 require 'recot/commands/tree_generator'
 
 module Recot
@@ -19,11 +20,14 @@ module Recot
           case input_str
           when /[Ee]xit/
             break
+          when /[Cc]ancel/
+            # Cancel recent evidence.
+            RecentCancel.cancel
           when /\d{1,3}(-\d{1,3})?(-\d{1,3})?/
-            # generate tree
+            # Generate tree.
             TreeGenerator.generate(input_str)
           else
-            # continue...
+            # Continue...
           end
           count += 1
         end

@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'fileutils'
+require 'recot/tasks/base_task'
 require 'recot/cache/state_cache'
 
 # TODO sync work dir to __output dir
@@ -25,8 +26,16 @@ module Recot
 
 private
       def move(path)
+        files = Dir.glob("#{Recot.basket_dir}/*")
         # move all
-        FileUtils.mv(Dir.glob("#{Recot.basket_dir}/*"),"#{path}/")
+        FileUtils.mv(files, "#{path}/")
+
+        # Cached evidence files
+        cache_files = []
+        files.each do |f|
+          cache_files << "#{path}/#{File.basename(f)}"
+        end
+        Recot::Cache::StateCache.store_recent_evidence(cache_files)
       end
 
     end
