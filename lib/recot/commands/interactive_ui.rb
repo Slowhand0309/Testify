@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'recot/commands/recent_cancel'
+require 'recot/commands/current_clear'
 require 'recot/commands/tree_generator'
 
 module Recot
@@ -23,6 +24,9 @@ module Recot
           when /[Cc]ancel/
             # Cancel recent evidence.
             RecentCancel.cancel
+          when /[Cc]lear/
+            # Clear current test no.
+            CurrentClear.clear
           when /\d{1,3}(-\d{1,3})?(-\d{1,3})?/
             # Generate tree.
             TreeGenerator.generate(input_str)
