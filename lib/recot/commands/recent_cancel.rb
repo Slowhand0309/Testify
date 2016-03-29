@@ -7,6 +7,9 @@ module Recot
   module Commands
     class RecentCancel
 
+      # Delete recent evidence resources.
+      #
+      # Set nil to cache after delete.
       def self.cancel
         # Get recent evidence from cache
         evidences = Recot::Cache::StateCache.restore_recent_evidence
