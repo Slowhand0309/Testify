@@ -34,6 +34,22 @@ protected
       def evidence_path()
         "#{Recot.resources_dir}/#{get_testno}"
       end
+
+      # Get relative path from __output.
+      #
+      # == Returns:
+      # Relative path from __output.
+      def relative_path_from_output(path)
+        path.gsub("#{Dir.pwd}/__output/", '')
+      end
+
+      # Get relative path from resource.
+      #
+      # == Returns:
+      # Relative path from resource.
+      def relative_path_from_resource(path)
+        path.gsub("#{Dir.pwd}/__output/resources/", '')
+      end
     end
   end
 end

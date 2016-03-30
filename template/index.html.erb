@@ -9,7 +9,7 @@
     <div id="content">
       <ul>
 <% data[:resources].each do |res| -%>
-          <li><%= res %></li>
+          <li><a href="<%= res %>"><%= File.basename(res) %></a></li>
 <% end -%>
       </ul>
     </div>

@@ -33,7 +33,7 @@ private
         files = []
         Dir::glob("#{evidence_path}/*").each do |f|
           # Create evidence file path.
-          files << f
+          files << relative_path_from_resource(f)
         end
 
         # Set the data hash object.

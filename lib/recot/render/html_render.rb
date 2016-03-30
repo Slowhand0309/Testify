@@ -53,10 +53,14 @@ private
       # data::
       #   Hash object of binding data.
       def render(template_file, out_file, data)
-        erb = ERB.new(File.read(template_file), nil, '-')
-        ret = erb.result(binding)
-        File.open(out_file, "w:utf-8") do |f|
-          f.write(ret)
+        begin
+          erb = ERB.new(File.read(template_file), nil, '-')
+          ret = erb.result(binding)
+          File.open(out_file, "w:utf-8") do |f|
+            f.write(ret)
+          end
+        rescue => ex
+          $stderr.puts "render html exception #{ex}"
         end
       end
 

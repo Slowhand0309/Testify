@@ -25,7 +25,7 @@ private
         files = []
         Dir::glob("#{Recot.resources_dir}/*.html").each do |f|
           # Create evidence file path.
-          files << f
+          files << relative_path_from_output(f)
         end
 
         # Set the data hash object.
