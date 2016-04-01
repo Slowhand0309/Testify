@@ -50,7 +50,9 @@ It threw the evidence to the `basket` directory.
 It will be reflected in the HTML automatically.
 
 ```
-TODO
+├── __output
+│   ├── index.html
+│   └── resources
 ```
 
 If you want to delete the previous evidence, run the following command:
@@ -62,13 +64,13 @@ If you want to delete the previous evidence, run the following command:
 If you want to delete all the evidence of the particular test number, run the following command:
 
 ```sh
-[3](recot) > clear 1-1-1
+[3](recot) > clear
 ```
 
 If you want to test the end, run the following command:
 
 ```sh
-[4](recot) > finish
+[4](recot) > exit
 ```
 
 ## Licence
