@@ -7,6 +7,9 @@ module Recot
     # Task for update index.html.
     class IndexdocTask < BaseTask
 
+      # Path of indexdoc template.
+      INDEXDOC_TEMPLATE = "#{Dir.pwd}/template/index.html.erb".freeze
+
       INDEX_HTML = 'index.html'.freeze
 
       def run(args = nil)
@@ -35,7 +38,7 @@ private
         data[:resources] = files
 
         # Render
-        Recot::Render::HtmlRender.new.render_indexdoc(data, index_path)
+        Recot::Render::HtmlRenderer.new.render_doc(INDEXDOC_TEMPLATE, index_path, data)
       end
 
       def index_path

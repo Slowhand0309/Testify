@@ -1,13 +1,16 @@
 # coding: utf-8
 require 'recot/tasks/base_task'
 require 'recot/cache/state_cache'
-require 'recot/render/html_render'
+require 'recot/render/html_renderer'
 
 module Recot
   module Tasks
 
     # Generate resources html file task.
     class ResdocTask < BaseTask
+
+      # Path of resdoc template.
+      RESDOC_TEMPLATE = "#{Dir.pwd}/template/resdoc.html.erb".freeze
 
       # Run the resdoc task.
       #
@@ -42,7 +45,7 @@ private
         data[:files] = files
 
         # Render
-        Recot::Render::HtmlRender.new.render_resdoc(data, resdoc_path)
+        Recot::Render::HtmlRenderer.new.render_doc(RESDOC_TEMPLATE, resdoc_path, data)
       end
 
       def gen_resdir
