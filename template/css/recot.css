@@ -12,9 +12,10 @@ html {
 }
 
 body {
-  background-color: #ffffff;
   color: #000000;
   margin: 0px;
+  text-align: center;
+  background-color: #ffffff;
 }
 
 /* Header */
@@ -35,4 +36,17 @@ body {
 /* Lists */
 .lists {
   margin: 10px;
+}
+
+/* Copyright */
+.copyright {
+  padding: 5px;
+  font-size: 12px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.copyright > hr {
+  border: 0;
+  height: 1px;
 }

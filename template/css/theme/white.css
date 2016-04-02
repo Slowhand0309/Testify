@@ -18,7 +18,10 @@
 
 /* Footer */
 #footer {
-  background-color: #FA5858;
+  color: #dadada;
+  padding-left: 300px;
+  padding-right: 300px;
+  background: #585f69 none repeat scroll 0% 0%;
 }
 
 /* List items */
@@ -33,4 +36,14 @@
 
 .lists > .item:hover {
   background: #fafafa;
+}
+
+/* Copyright */
+.copyright {
+  color: #dadada;
+  background: #585f69 none repeat scroll 0% 0%;
+}
+
+.copyright > hr {
+  background: #dadada;
 }
