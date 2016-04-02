@@ -3,15 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title><%= data[:title] %></title>
+    <link rel="stylesheet" href="css/recot.css">
+    <link rel="stylesheet" href="css/theme/<%= data[:theme] %>.css">
     <script type="text/javascript" src="/__rack/livereload.js"></script>
   </head>
   <body>
+    <div id="header">
+    </div>
+    <h4>Evidence index lists.</h4>
+    <hr>
     <div id="content">
-      <ul>
+      <div class="lists">
 <% data[:resources].each do |res| -%>
-          <li><a href="<%= res %>"><%= File.basename(res) %></a></li>
+        <div class="item">
+          <a href="<%= res %>"><%= File.basename(res, ".*") %></a>
+        </div>
 <% end -%>
-      </ul>
+      </div>
+    </div>
+    <div id="footer">
     </div>
   </body>
 </html>

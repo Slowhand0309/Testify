@@ -2,6 +2,7 @@
 require 'fileutils'
 require 'recot/cache/state_cache'
 require 'recot/tasks/indexdoc_task'
+require 'recot/tasks/resdoc_task'
 
 module Recot
   module Commands
@@ -29,6 +30,9 @@ module Recot
             FileUtils.rm(resdoc_path) if File.exist?(resdoc_path)
             # Update index html file.
             Recot::Tasks::IndexdocTask.new.run
+          else
+            # Update resource doc.
+            Recot::Tasks::ResdocTask.new.run(evidences)
           end
           # Set nil at recent evidence.
           Recot::Cache::StateCache.store_recent_evidence(nil)

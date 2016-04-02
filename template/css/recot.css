@@ -1,0 +1,38 @@
+/*!
+ * recot
+ * https://github.com/Slowhand0309/recot
+ * MIT licensed
+ *
+ * Copyright (C) 2016 Slowhand0309
+ */
+
+ /* Global Style */
+html {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0px;
+}
+
+/* Header */
+#header {
+
+}
+
+/* Content */
+#content {
+
+}
+
+/* Footer */
+#footer {
+
+}
+
+/* Lists */
+.lists {
+  margin: 10px;
+}

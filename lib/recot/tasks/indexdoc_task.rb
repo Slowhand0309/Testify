@@ -31,6 +31,7 @@ private
         # Set the data hash object.
         data = {}
         data[:title] = 'test'
+        data[:theme] = 'white' # TODO change theme.
         data[:resources] = files
 
         # Render
