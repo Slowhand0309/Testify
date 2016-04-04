@@ -36,6 +36,7 @@ private
         data[:title] = 'test'
         data[:theme] = 'white' # TODO change theme.
         data[:resources] = files
+        data[:version] = Recot::VERSION
 
         # Render
         Recot::Render::HtmlRenderer.new.render_doc(INDEXDOC_TEMPLATE, index_path, data)

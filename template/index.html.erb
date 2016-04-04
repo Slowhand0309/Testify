@@ -9,8 +9,9 @@
   </head>
   <body>
     <div id="header">
+      <p>Evidence lists by Recot.</p>
     </div>
-    <h4>Evidence index lists.</h4>
+    <h4>Evidences</h4>
     <hr>
     <div id="content">
       <div class="lists">
@@ -18,14 +19,18 @@
         <div class="item">
           <a href="<%= res %>"><%= File.basename(res, ".*") %></a>
         </div>
+        <hr>
 <% end -%>
       </div>
     </div>
-    <div id="footer">
+    <footer id="footer">
+      <div class="information">
+        This document was created by Recot ver <%= data[:version] %>.
+      </div>
       <div class="copyright">
         <hr>
         Recot 2016 © Slowhand0309.
       </div>
-    </div>
+    </footer>
   </body>
 </html>

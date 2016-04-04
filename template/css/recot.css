@@ -13,14 +13,15 @@ html {
 
 body {
   color: #000000;
-  margin: 0px;
+  margin: 0;
   text-align: center;
   background-color: #ffffff;
 }
 
 /* Header */
 #header {
-
+  padding: 1px;
+  font-size: 36px;
 }
 
 /* Content */
@@ -30,12 +31,31 @@ body {
 
 /* Footer */
 #footer {
-
+  min-height: 500px;
 }
 
 /* Lists */
 .lists {
-  margin: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+/* List items */
+.lists > .item {
+  padding: 10px;
+  margin: 0px;
+  text-align: left;
+  font-size: 24px;
+  border-radius: 5px;
+  -webkit-transition: 0.1s color ease, 0.1s padding-left ease, 0.1s background-color ease;
+          transition: 0.1s color ease, 0.1s padding-left ease, 0.1s background-color ease;
+}
+
+/* Information */
+.information {
+  padding-top: 20px;
+  font-size: 18px;
+  text-align: left;
 }
 
 /* Copyright */
