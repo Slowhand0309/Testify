@@ -3,20 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title><%= data[:title] %></title>
+    <link rel="stylesheet" href="../css/recot.css">
+    <link rel="stylesheet" href="../css/theme/<%= data[:theme] %>.css">
   </head>
   <body>
+    <div id="header">
+      <p>Evidences.</p>
+    </div>
+    <div class="navigate">
+      <div class="btn">
+        <a href="javascript:history.back();">Back</a>
+      </div>
+    </div>
     <div id="content">
-      <ul>
+      <div class="evidences">
 <% data[:files].each do |file| -%>
-          <li><%= File.basename(file) %></li>
+          <h4><%= File.basename(file) %></h4>
 <% case File.extname(file) -%>
 <% when /(jpe*g|png|gif|bmp)/i -%>
           <img border="0" src="<%= file %>" width="256" height="256">
 <% else -%>
-          <p><%= File.read("#{Dir.pwd}/__output/resources/#{file}") %></p>
+          <p><%= File.read("#{Recot.resources_dir}/#{file}") %></p>
 <% end -%>
+        <hr>
 <% end -%>
-      </ul>
+      </div>
     </div>
+    <footer id="footer">
+      <div class="information">
+        This document was created by Recot ver <%= data[:version] %>.
+      </div>
+      <div class="copyright">
+        <hr>
+        Recot 2016 © Slowhand0309.
+      </div>
+    </footer>
   </body>
 </html>

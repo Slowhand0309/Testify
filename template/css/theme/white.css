@@ -25,6 +25,25 @@
   background: #585f69 none repeat scroll 0% 0%;
 }
 
+/* Button */
+.btn {
+  padding: 5px;
+  background: #dadada;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.btn > a {
+  font-size: 18px;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #cacbcd;
+}
+
 /* List items */
 .lists > .item {
   color: rgba(0, 0, 0, 0.4);

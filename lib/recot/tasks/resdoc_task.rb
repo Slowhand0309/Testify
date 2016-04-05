@@ -43,6 +43,8 @@ private
         data = {}
         data[:title] = get_testno()
         data[:files] = files
+        data[:theme] = 'white' # TODO change theme.
+        data[:version] = Recot::VERSION
 
         # Render
         Recot::Render::HtmlRenderer.new.render_doc(RESDOC_TEMPLATE, resdoc_path, data)
