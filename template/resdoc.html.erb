@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="header">
-      <p>Evidences.</p>
+      <p><%= data[:title] %> Evidences.</p>
     </div>
     <div class="navigate">
       <div class="btn">
@@ -23,7 +23,9 @@
 <% when /(jpe*g|png|gif|bmp)/i -%>
           <img border="0" src="<%= file %>" width="256" height="256">
 <% else -%>
-          <p><%= File.read("#{Recot.resources_dir}/#{file}") %></p>
+          <div class="text">
+            <pre><%= File.read("#{Recot.resources_dir}/#{file}") %></pre>
+          </div>
 <% end -%>
         <hr>
 <% end -%>

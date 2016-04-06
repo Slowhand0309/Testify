@@ -59,6 +59,11 @@
   background: #585f69;
 }
 
+/* Text */
+.text {
+  background-color: #e6e6e6;
+}
+
 /* Copyright */
 .copyright {
   color: #dadada;

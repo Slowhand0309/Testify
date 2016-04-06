@@ -18,6 +18,10 @@ body {
   background-color: #ffffff;
 }
 
+pre {
+  text-align: left;
+}
+
 /* Header */
 #header {
   padding: 1px;
@@ -64,6 +68,11 @@ body {
   text-align: left;
 }
 
+/* Text */
+.text {
+  margin-left: 23%;
+  margin-right: 23%;
+}
 /* Copyright */
 .copyright {
   padding: 5px;
