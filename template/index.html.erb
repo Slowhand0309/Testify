@@ -17,7 +17,7 @@
       <div class="lists">
 <% data[:resources].each do |res| -%>
         <div class="item">
-          <a href="<%= res %>"><%= File.basename(res, ".*") %></a>
+          <a href="<%= res %>">No. <%= File.basename(res, ".*") %></a>
         </div>
         <hr>
 <% end -%>
