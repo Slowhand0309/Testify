@@ -6,13 +6,9 @@ module Recot
   module Commands
     class TreeGenerator
 
-      SPLIT_SEPARATOR = '-'.freeze
-
       def self.generate(test_no)
-        # split
-        no_dir = test_no.split(SPLIT_SEPARATOR).join('/')
         # generate test no tree
-        path = "#{Recot.resources_dir}/#{no_dir}"
+        path = "#{Recot.resources_dir}/#{test_no}"
         unless File.exists?(path)
           FileUtils.mkdir_p(path)
           # cache current number

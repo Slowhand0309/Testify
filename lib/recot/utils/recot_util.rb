@@ -16,8 +16,10 @@ module Recot
         # Create directory.
         # * __output/resource
         # * basket
+        # * log
         #
         # Copy css files.
+        # Remove if exist log file.
         def prepare()
           # Create '__output/resource' directory.
           unless File.exist?(Recot.resources_dir)
@@ -28,6 +30,14 @@ module Recot
           unless File.exist?(Recot.basket_dir)
             FileUtils.mkdir_p(Recot.basket_dir)
           end
+
+          # Remove 'log' directory.
+          if File.exist?("#{Dir.pwd}/log")
+            FileUtils.rm_r("#{Dir.pwd}/log")
+          end
+
+          # Create 'log' directory.
+          FileUtils.mkdir("#{Dir.pwd}/log")
 
           # Copy css files.
           unless File.exist?("#{Recot.output_dir}/css")

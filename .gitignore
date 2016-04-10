@@ -38,6 +38,6 @@ Gemfile.lock
 # output directory for recot
 /__output/
 /basket/
+/log/
 .cahce
-access.log
 config.yml
