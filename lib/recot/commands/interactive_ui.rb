@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'recot/utils/recot_util'
 require 'recot/commands/recent_cancel'
 require 'recot/commands/current_clear'
 require 'recot/commands/tree_generator'
@@ -34,6 +35,20 @@ module Recot
             # Continue...
           end
           count += 1
+        end
+      end
+
+      def destroy
+        loop do
+          print "Sure you want to delete all the files? [y/N] > "
+          input_str = STDIN.gets.chomp
+          case input_str
+          when /^y$/
+            Utils::RecotUtil.remove
+            puts "Removed all the files and cache."
+          else
+          end
+          break
         end
       end
 

@@ -4,6 +4,7 @@ require 'recot/commands/rack_server'
 require 'recot/commands/guard_server'
 require 'recot/commands/interactive_ui'
 require 'recot/commands/listener'
+require 'recot/utils/recot_util'
 
 module Recot
   module Commands
@@ -11,6 +12,9 @@ module Recot
     # Start recot.
     #
     def self.start
+
+      # Prepare.
+      Utils::RecotUtil.prepare
 
       # Start guard server.
       GuardServer.new.run
@@ -35,7 +39,8 @@ module Recot
 
     # All clear.
     #
-    def self.reset
+    def self.destroy
+      InteractiveUi.new.destroy
     end
   end
 end

@@ -8,8 +8,11 @@ module Recot
     # Task for update index.html.
     class IndexdocTask < BaseTask
 
+      # Path of gem root path.
+      ROOT_DIR = "#{File.expand_path('../../../../', __FILE__)}".freeze
+
       # Path of indexdoc template.
-      INDEXDOC_TEMPLATE = "#{Dir.pwd}/template/index.html.erb".freeze
+      INDEXDOC_TEMPLATE = "#{ROOT_DIR}/template/index.html.erb".freeze
 
       INDEX_HTML = 'index.html'.freeze
 

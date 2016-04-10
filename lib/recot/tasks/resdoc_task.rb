@@ -10,8 +10,11 @@ module Recot
     # Generate resources html file task.
     class ResdocTask < BaseTask
 
+      # Path of gem root path.
+      ROOT_DIR = "#{File.expand_path('../../../../', __FILE__)}".freeze
+
       # Path of resdoc template.
-      RESDOC_TEMPLATE = "#{Dir.pwd}/template/resdoc.html.erb".freeze
+      RESDOC_TEMPLATE = "#{ROOT_DIR}/template/resdoc.html.erb".freeze
 
       # Run the resdoc task.
       #

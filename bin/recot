@@ -27,11 +27,19 @@ class RecotExecutable
   end
 
   desc 'Clean cache'
-  command :clean do |cmd|
+  command :cleanup do |cmd|
 
     cmd.action do |_, options, _|
       Recot::Cache::StateCache.clear
       puts "Remove all of the cache."
+    end
+  end
+
+  desc 'Remove all files and cache'
+  command :destroy do |cmd|
+
+    cmd.action do |_, options, _|
+      Recot::Commands.destroy
     end
   end
 
