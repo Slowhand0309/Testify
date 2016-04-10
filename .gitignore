@@ -40,3 +40,4 @@ Gemfile.lock
 /basket/
 .cahce
 access.log
+config.yml

@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'recot/config'
 require 'recot/tasks/base_task'
 require 'recot/cache/state_cache'
 require 'recot/render/html_renderer'
@@ -43,7 +44,7 @@ private
         data = {}
         data[:title] = get_testno()
         data[:files] = files
-        data[:theme] = 'white' # TODO change theme.
+        data[:theme] = Config.instance.theme
         data[:version] = Recot::VERSION
 
         # Render

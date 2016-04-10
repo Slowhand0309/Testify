@@ -1,5 +1,5 @@
 # coding: utf-8
-
+require 'recot/config'
 require 'recot/commands/rack_server'
 require 'recot/commands/guard_server'
 require 'recot/commands/interactive_ui'
@@ -8,29 +8,33 @@ require 'recot/commands/listener'
 module Recot
   module Commands
 
-    # start recot
+    # Start recot.
+    #
     def self.start
-      # start guard server
+
+      # Start guard server.
       GuardServer.new.run
 
-      # start rack server
+      # Start rack server.
       Thread.new do
         RackServer.new.run
       end
 
-      # start listener
+      # Start listener.
       Listener.new.run
-      
-      # start interactive operate
+
+      # Start interactive operate.
       InteractiveUi.new.start
     end
 
-    # start server
+    # Start server.
+    #
     def self.server(port = nil)
       RackServer.new(port).run
     end
 
-    # all clear
+    # All clear.
+    #
     def self.reset
     end
   end

@@ -1,4 +1,5 @@
 # coding: utf-8
+require 'recot/config'
 require 'recot/tasks/base_task'
 
 module Recot
@@ -33,8 +34,8 @@ private
 
         # Set the data hash object.
         data = {}
-        data[:title] = 'test'
-        data[:theme] = 'white' # TODO change theme.
+        data[:title] = Config.instance.project_name
+        data[:theme] = Config.instance.theme
         data[:resources] = files
         data[:version] = Recot::VERSION
 
