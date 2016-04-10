@@ -4,6 +4,8 @@
 
 Recot is a tool to gather evidence of the test.
 
+[![Gem Version](https://badge.fury.io/rb/recot.svg)](https://badge.fury.io/rb/recot)
+
 ## Description
 Create evidence document for test to easy.<br>
 Throw evidence(screen shots or file...) to specific folder for create evidence document.
