@@ -27,7 +27,14 @@ module Recot
 
       def notify(files)
         return if files.empty?
-        # run all tasks
+
+        # Check test no.
+        unless Cache::StateCache.restore_no
+          puts "Please input test no. Press the Enter to continue."
+          return
+        end
+
+        # Run all tasks.
         Recot::Tasks::ALL_TASKS.each do |t|
           cls = Object.const_get("Recot::Tasks::#{t}")
           cls.new.run(files)
