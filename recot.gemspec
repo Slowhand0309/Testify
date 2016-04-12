@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rack-livereload", "~> 0.3"
   spec.add_runtime_dependency "listen", "~> 3.0"
   spec.add_runtime_dependency "activesupport", "~> 4.0"
+  spec.add_runtime_dependency "wdm", ">= 0.1.0" if Gem.win_platform?
 
   # Development Dependencies
   spec.add_development_dependency "rake", "~> 10.0"
