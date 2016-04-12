@@ -3,14 +3,6 @@ require 'spec_helper'
 
 describe Recot::Cache::StateCache do
 
-  before do
-    Recot::Cache::StateCache.clear()
-  end
-
-  after do
-    Recot::Cache::StateCache.clear()
-  end
-
   it 'cache clear' do
     # Store
     Recot::Cache::StateCache.store_no(10)
