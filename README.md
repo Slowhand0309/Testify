@@ -24,7 +24,7 @@ To begin the test with the following command:
 
 ```sh
 $ recot start
-Start recot ver 0.1.0
+Start recot ver 0.1.1
 
     ____                  __
    / __ \___  _________  / /
