@@ -36,7 +36,7 @@ module Recot
 
         # Run all tasks.
         Recot::Tasks::ALL_TASKS.each do |t|
-          cls = Object.const_get("Recot::Tasks::#{t}")
+          cls = Recot::Tasks.const_get(t)
           cls.new.run(files)
         end
       end

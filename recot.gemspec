@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Recot::VERSION
   spec.authors       = ["slowhand0309"]
   spec.email         = ["slowhand0309@gmail.com"]
+  spec.required_ruby_version = ">= 1.9.3"
 
   spec.summary       = 'Recot is a tool to gather evidence of the test'
   spec.description   = 'To generate a test result of documents in HTML format automatically'
@@ -27,9 +28,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rack-livereload", "~> 0.3"
   spec.add_runtime_dependency "listen", "~> 3.0"
   spec.add_runtime_dependency "activesupport", "~> 4.0"
+  spec.add_runtime_dependency "wdm", ">= 0.1.0" if Gem.win_platform?
 
   # Development Dependencies
-  spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
 end

@@ -5,6 +5,7 @@
 Recot is a tool to gather evidence of the test.
 
 [![Gem Version](https://badge.fury.io/rb/recot.svg)](https://badge.fury.io/rb/recot)
+![travis-ci](https://travis-ci.org/Slowhand0309/recot.svg?branch=develop)
 
 ## Description
 Create evidence document for test to easy.<br>
@@ -23,7 +24,7 @@ To begin the test with the following command:
 
 ```sh
 $ recot start
-Start recot ver 0.1.0
+Start recot ver 0.1.1
 
     ____                  __
    / __ \___  _________  / /
