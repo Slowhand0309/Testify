@@ -14,13 +14,16 @@ module Recot
   # Resource files directory name.
   RESOURCE_DIR = 'resources'.freeze
 
+  # Write logfile directory name.
+  LOG_DIR = 'log'.freeze
+
   class << self
 
     # Get output directory path.
     #
     # == Returns:
     # A string of output directory path.
-    def output_dir()
+    def output_dir
       "#{Dir.pwd}/#{OUTPUT_DIR}"
     end
 
@@ -28,7 +31,7 @@ module Recot
     #
     # == Returns:
     # A string of resources directory path.
-    def resources_dir()
+    def resources_dir
       "#{output_dir}/#{RESOURCE_DIR}"
     end
 
@@ -36,8 +39,16 @@ module Recot
     #
     # == Returns:
     # A string of basket directory path.
-    def basket_dir()
+    def basket_dir
       "#{Dir.pwd}/#{BASKET_DIR}"
+    end
+
+    # Get log directory path.
+    #
+    # == Returns:
+    # A string of log directory path.
+    def log_dir
+      "#{Dir.pwd}/#{LOG_DIR}"
     end
   end
 

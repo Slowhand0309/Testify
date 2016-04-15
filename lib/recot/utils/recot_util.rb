@@ -32,8 +32,8 @@ module Recot
           end
 
           # Remove 'log' directory.
-          if File.exist?("#{Dir.pwd}/log")
-            FileUtils.rm_r("#{Dir.pwd}/log")
+          if File.exist?(Recot.log_dir)
+            FileUtils.rm_r(Recot.log_dir)
           end
 
           # Create 'log' directory.
@@ -45,12 +45,13 @@ module Recot
           end
         end
 
-        # Remove all directory and cache.
+        # Remove all dependency files.
         #
         # * __output
         # * __output/resource
         # * __output/css
         # * basket
+        # * log
         def remove()
           # Remove '__output' directory.
           if File.exist?(Recot.output_dir)
@@ -60,6 +61,11 @@ module Recot
           # Remove 'basket' directory.
           if File.exist?(Recot.basket_dir)
             FileUtils.rm_r(Recot.basket_dir)
+          end
+
+          # Remove 'log' directory.
+          if File.exist?(Recot.log_dir)
+            FileUtils.rm_r(Recot.log_dir)
           end
 
           # Remove cache.
