@@ -1,0 +1,79 @@
+/*!
+ * recot
+ * https://github.com/Slowhand0309/recot
+ * MIT licensed
+ *
+ * Copyright (C) 2016 Slowhand0309
+ */
+
+body {
+ background-color: #fffeeb;
+}
+
+/* Header */
+#header {
+  color: #000000;
+  background-color: #aaddf2;
+}
+
+/* Content */
+#content {
+  background-color: #fffeeb;
+}
+
+/* Footer */
+#footer {
+  color: #fffeeb;
+  padding-left: 300px;
+  padding-right: 300px;
+  background: #4a8cb3 none repeat scroll 0% 0%;
+}
+
+/* Button */
+.btn {
+  padding: 5px;
+  background: #dadada;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.btn > a {
+  font-size: 18px;
+  color: #16182D;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #cacbcd;
+}
+
+/* List items */
+.lists > .item {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.lists > .item:hover {
+  background: #d9d8d8;
+}
+
+.lists > hr {
+  border: 0;
+  height: 1px;
+  background: #000000;
+}
+
+/* Text */
+.text {
+  background-color: #ece8e8;
+}
+
+/* Copyright */
+.copyright {
+  color: #FFFEEB;
+  background: #4A8CB3 none repeat scroll 0% 0%;
+}
+
+.copyright > hr {
+  background: #FFFEEB;
+}
