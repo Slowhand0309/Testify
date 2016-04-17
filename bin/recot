@@ -8,21 +8,13 @@ class RecotExecutable
 
   version Recot::VERSION
 
-  desc 'Start server for recot'
-  command :s, :server do |cmd|
+  desc 'Start recot'
+  command :start do |cmd|
 
     cmd.desc 'Server listen port'
     cmd.flag [:p, :port], default_value: 9292
     cmd.action do |_, options, _|
-      Recot::Commands.server(options[:port])
-    end
-  end
-
-  desc 'Start recot'
-  command :start do |cmd|
-
-    cmd.action do |_, options, _|
-      Recot::Commands.start
+      Recot::Commands.start(options[:port])
     end
   end
 
