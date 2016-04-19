@@ -94,6 +94,26 @@ run the following command:
 [5](recot) > destroy
 ```
 
+## Configuration
+
+Can be configured in `config.yml` under the directory from which you started recot.
+
+* Themes
+
+You can select a theme from the following:
+
+* white
+* dark
+* light
+* moon
+* sky
+
+Set the following in `config.yml`.
+```yml
+theme: "white"
+```
+
+
 ## Licence
 
 [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
