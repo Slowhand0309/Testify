@@ -8,6 +8,8 @@ module Recot
 
       ROOT_DIR = "#{File.expand_path('../../../../', __FILE__)}".freeze
       CSS_TEMPLATE_DIR = "#{ROOT_DIR}/template/css".freeze
+      JS_TEMPLATE_DIR = "#{ROOT_DIR}/template/js".freeze
+      IMAGES_TEMPLATE_DIR = "#{ROOT_DIR}/template/images".freeze
 
       class << self
 
@@ -42,6 +44,16 @@ module Recot
           # Copy css files.
           unless File.exist?("#{Recot.output_dir}/css")
             FileUtils.cp_r(CSS_TEMPLATE_DIR, Recot.output_dir)
+          end
+
+          # Copy js files.
+          unless File.exist?("#{Recot.output_dir}/js")
+            FileUtils.cp_r(JS_TEMPLATE_DIR, Recot.output_dir)
+          end
+
+          # Copy images files.
+          unless File.exist?("#{Recot.output_dir}/images")
+            FileUtils.cp_r(IMAGES_TEMPLATE_DIR, Recot.output_dir)
           end
         end
 

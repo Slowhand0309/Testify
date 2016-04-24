@@ -73,6 +73,12 @@ pre {
   margin-left: 23%;
   margin-right: 23%;
 }
+
+/* Evidences image */
+.evidence_img {
+  border-radius: 4px;
+}
+
 /* Copyright */
 .copyright {
   padding: 5px;

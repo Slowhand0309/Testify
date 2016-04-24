@@ -5,6 +5,7 @@
     <title><%= data[:title] %></title>
     <link rel="stylesheet" href="../css/recot.css">
     <link rel="stylesheet" href="../css/theme/<%= data[:theme] %>.css">
+    <link rel="stylesheet" href="../css/lightbox.min.css">
   </head>
   <body>
     <div id="header">
@@ -21,7 +22,9 @@
           <h4><%= File.basename(file) %></h4>
 <% case File.extname(file) -%>
 <% when /(jpe*g|png|gif|bmp)/i -%>
-          <img border="0" src="<%= file %>" width="256" height="256">
+          <a href="<%= file %>" data-lightbox="<%= File.basename(file, ".*") %>" data-title="<%= File.basename(file) %>">
+            <img class="evidence_img" border="0" src="<%= file %>" width="256" height="256">
+          </a>
 <% else -%>
           <div class="text">
             <pre><%= File.read("#{Recot.resources_dir}/#{file}") %></pre>
@@ -41,4 +44,6 @@
       </div>
     </footer>
   </body>
+  <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript" src="../js/lightbox.min.js"></script>
 </html>
