@@ -5,7 +5,7 @@
 Recot is a tool to gather evidence of the test.
 
 [![Gem Version](https://badge.fury.io/rb/recot.svg)](https://badge.fury.io/rb/recot)
-![travis-ci](https://travis-ci.org/Slowhand0309/recot.svg?branch=develop)
+![travis-ci](https://travis-ci.org/Slowhand0309/recot.svg?branch=master)
 
 ## Description
 Create evidence document for test to easy.<br>
@@ -24,7 +24,7 @@ To begin the test with the following command:
 
 ```sh
 $ recot start
-Start recot ver 0.1.1
+Start recot ver 0.2.0
 
     ____                  __
    / __ \___  _________  / /
@@ -61,13 +61,16 @@ It will be reflected in the HTML automatically.
 │       └── A1.html
 ```
 
-access the 'http://localhost:9292/__output/index.html'
+access the http://localhost:9292/__output/index.html
 
 * index.html
 ![img001](http://slowhand0309.github.io/images/recot/index_html.png)
 
 * resource.html
 ![img002](http://slowhand0309.github.io/images/recot/resource_html.png)
+
+When you click the image to display the popup.
+![img003](http://slowhand0309.github.io/images/recot/popup.png)
 
 If you want to delete the previous evidence, run the following command:
 
@@ -93,6 +96,34 @@ run the following command:
 ```sh
 [5](recot) > destroy
 ```
+
+## Configuration
+
+Can be configured in `config.yml` under the directory from which you started recot.
+
+> Themes
+
+You can select a theme from the following:
+
+* white
+![img002](http://slowhand0309.github.io/images/recot/resource_html.png)
+
+* dark
+![img004](http://slowhand0309.github.io/images/recot/theme_dark.png)
+* light
+![img005](http://slowhand0309.github.io/images/recot/theme_light.png)
+
+* moon
+![img006](http://slowhand0309.github.io/images/recot/theme_moon.png)
+
+* sky
+![img007](http://slowhand0309.github.io/images/recot/theme_sky.png)
+
+Set the following in `config.yml`.
+```yml
+theme: "white"
+```
+
 
 ## Licence
 

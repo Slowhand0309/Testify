@@ -6,23 +6,27 @@
  * Copyright (C) 2016 Slowhand0309
  */
 
+body {
+ background-color: #fffeeb;
+}
+
 /* Header */
 #header {
-  color: #ffffff;
-  background-color: #FA5858;
+  color: #000000;
+  background-color: #aaddf2;
 }
 
 /* Content */
 #content {
-  background-color: #FFFFFF;
+  background-color: #fffeeb;
 }
 
 /* Footer */
 #footer {
-  color: #dadada;
+  color: #fffeeb;
   padding-left: 300px;
   padding-right: 300px;
-  background: #585f69 none repeat scroll 0% 0%;
+  background: #4a8cb3 none repeat scroll 0% 0%;
 }
 
 /* Button */
@@ -35,7 +39,7 @@
 
 .btn > a {
   font-size: 18px;
-  color: #000000;
+  color: #16182D;
   text-align: center;
   text-decoration: none;
 }
@@ -50,31 +54,31 @@
 }
 
 .lists > .item:hover {
-  background: #fafafa;
+  background: #d9d8d8;
 }
 
 .lists > hr {
   border: 0;
   height: 1px;
-  background: #585f69;
+  background: #000000;
 }
 
 /* Text */
 .text > pre {
-  background-color: #e6e6e6;
+  background-color: #ece8e8;
 }
 
 /* Details */
 .detail {
-  color: #585f69;
+  color: #4A8CB3;
 }
 
 /* Copyright */
 .copyright {
-  color: #dadada;
-  background: #585f69 none repeat scroll 0% 0%;
+  color: #FFFEEB;
+  background: #4A8CB3 none repeat scroll 0% 0%;
 }
 
 .copyright > hr {
-  background: #dadada;
+  background: #FFFEEB;
 }

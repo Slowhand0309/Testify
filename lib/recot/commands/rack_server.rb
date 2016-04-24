@@ -29,7 +29,7 @@ module Recot
       end
 
       def server_logger
-        Logger.new("#{Dir.pwd}/log/access.log")
+        Logger.new("#{Recot.log_dir}/access.log")
       end
 
     end

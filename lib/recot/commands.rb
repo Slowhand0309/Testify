@@ -11,7 +11,9 @@ module Recot
 
     # Start recot.
     #
-    def self.start
+    # == Parameters:
+    # Server listen port.
+    def self.start(port = nil)
 
       # Prepare.
       Utils::RecotUtil.prepare
@@ -21,7 +23,7 @@ module Recot
 
       # Start rack server.
       Thread.new do
-        RackServer.new.run
+        RackServer.new(port).run
       end
 
       # Start listener.
@@ -29,12 +31,6 @@ module Recot
 
       # Start interactive operate.
       InteractiveUi.new.start
-    end
-
-    # Start server.
-    #
-    def self.server(port = nil)
-      RackServer.new(port).run
     end
 
     # All clear.

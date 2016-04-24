@@ -12,7 +12,7 @@ module Recot
       end
 
       def start
-        print_banner()
+        print_banner
 
         count = 1
         loop do
@@ -45,7 +45,7 @@ module Recot
           case input_str
           when /^y$/
             Utils::RecotUtil.remove
-            puts "Removed all the files and cache."
+            puts "Removed all dependency files."
           else
           end
           break

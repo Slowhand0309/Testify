@@ -8,6 +8,8 @@ module Recot
 
       ROOT_DIR = "#{File.expand_path('../../../../', __FILE__)}".freeze
       CSS_TEMPLATE_DIR = "#{ROOT_DIR}/template/css".freeze
+      JS_TEMPLATE_DIR = "#{ROOT_DIR}/template/js".freeze
+      IMAGES_TEMPLATE_DIR = "#{ROOT_DIR}/template/images".freeze
 
       class << self
 
@@ -32,8 +34,8 @@ module Recot
           end
 
           # Remove 'log' directory.
-          if File.exist?("#{Dir.pwd}/log")
-            FileUtils.rm_r("#{Dir.pwd}/log")
+          if File.exist?(Recot.log_dir)
+            FileUtils.rm_r(Recot.log_dir)
           end
 
           # Create 'log' directory.
@@ -43,14 +45,25 @@ module Recot
           unless File.exist?("#{Recot.output_dir}/css")
             FileUtils.cp_r(CSS_TEMPLATE_DIR, Recot.output_dir)
           end
+
+          # Copy js files.
+          unless File.exist?("#{Recot.output_dir}/js")
+            FileUtils.cp_r(JS_TEMPLATE_DIR, Recot.output_dir)
+          end
+
+          # Copy images files.
+          unless File.exist?("#{Recot.output_dir}/images")
+            FileUtils.cp_r(IMAGES_TEMPLATE_DIR, Recot.output_dir)
+          end
         end
 
-        # Remove all directory and cache.
+        # Remove all dependency files.
         #
         # * __output
         # * __output/resource
         # * __output/css
         # * basket
+        # * log
         def remove()
           # Remove '__output' directory.
           if File.exist?(Recot.output_dir)
@@ -60,6 +73,11 @@ module Recot
           # Remove 'basket' directory.
           if File.exist?(Recot.basket_dir)
             FileUtils.rm_r(Recot.basket_dir)
+          end
+
+          # Remove 'log' directory.
+          if File.exist?(Recot.log_dir)
+            FileUtils.rm_r(Recot.log_dir)
           end
 
           # Remove cache.
