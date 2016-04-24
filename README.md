@@ -98,7 +98,7 @@ run the following command:
 
 Can be configured in `config.yml` under the directory from which you started recot.
 
-* Themes
+> Themes
 
 You can select a theme from the following:
 
