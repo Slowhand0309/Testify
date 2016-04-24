@@ -19,17 +19,35 @@
     <div id="content">
       <div class="evidences">
 <% data[:files].each do |file| -%>
-          <h4><%= File.basename(file) %></h4>
+        <div class="evidence">
 <% case File.extname(file) -%>
 <% when /(jpe*g|png|gif|bmp)/i -%>
-          <a href="<%= file %>" data-lightbox="<%= File.basename(file, ".*") %>" data-title="<%= File.basename(file) %>">
-            <img class="evidence_img" border="0" src="<%= file %>" width="256" height="256">
-          </a>
-<% else -%>
-          <div class="text">
-            <pre><%= File.read("#{Recot.resources_dir}/#{file}") %></pre>
+          <div class="image">
+            <h4><%= File.basename(file) %></h4>
+            <a href="<%= file %>" data-lightbox="<%= File.basename(file, ".*") %>" data-title="<%= File.basename(file) %>">
+              <img class="evidence_img" border="0" src="<%= file %>" width="256" height="256">
+            </a>
           </div>
+<% else -%>
+            <div class="text">
+              <h4><%= File.basename(file) %></h4>
+              <pre><%= File.read("#{Recot.resources_dir}/#{file}") %></pre>
+            </div>
 <% end -%>
+            <div class="detail">
+              <ul>
+                <li>File Name:</li>
+                <p><%= File.basename(file, ".*") %></p>
+                <li>File Type:</li>
+                <p><%= File.extname(file).gsub(".", "") %></p>
+                <li>Created At:</li>
+                <p><%= File.mtime("#{Recot.resources_dir}/#{file}") %></p>
+                <li>Updated At:</li>
+                <p><%= File.ctime("#{Recot.resources_dir}/#{file}") %></p>
+              </ul>
+            </div>
+          </div>
+        </div>
         <hr>
 <% end -%>
       </div>

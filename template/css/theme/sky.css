@@ -64,8 +64,13 @@ body {
 }
 
 /* Text */
-.text {
+.text > pre {
   background-color: #ece8e8;
+}
+
+/* Details */
+.detail {
+  color: #4A8CB3;
 }
 
 /* Copyright */

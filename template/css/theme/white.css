@@ -60,8 +60,13 @@
 }
 
 /* Text */
-.text {
+.text > pre {
   background-color: #e6e6e6;
+}
+
+/* Details */
+.detail {
+  color: #585f69;
 }
 
 /* Copyright */
