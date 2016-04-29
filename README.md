@@ -89,12 +89,20 @@ If you want to test the end, run the following command:
 ```sh
 [4](recot) > exit
 ```
+If you want to delete cacche.
+run the following command:
+
+```sh
+$ recot cleanup
+```
 
 If you want to delete all file and directory,
 run the following command:
 
 ```sh
-[5](recot) > destroy
+$ recot destroy
+Sure you want to delete all the files? [y/N] > y
+Removed all dependency files.
 ```
 
 ## Configuration
