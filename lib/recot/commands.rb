@@ -5,6 +5,7 @@ require 'recot/commands/guard_server'
 require 'recot/commands/interactive_ui'
 require 'recot/commands/listener'
 require 'recot/utils/recot_util'
+require 'recot/utils/browser_util'
 
 module Recot
   module Commands
@@ -13,7 +14,7 @@ module Recot
     #
     # == Parameters:
     # Server listen port.
-    def self.start(port = nil)
+    def self.start(port, open)
 
       # Prepare.
       Utils::RecotUtil.prepare
@@ -28,6 +29,11 @@ module Recot
 
       # Start listener.
       Listener.new.run
+
+      # Open browser.
+      if open
+        Utils::BrowserUtil.open(port)
+      end
 
       # Start interactive operate.
       InteractiveUi.new.start

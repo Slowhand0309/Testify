@@ -13,8 +13,12 @@ class RecotExecutable
 
     cmd.desc 'Server listen port'
     cmd.flag [:p, :port], default_value: 9292
+
+    cmd.desc 'Open default browser'
+    cmd.switch [:o, :open]
+    
     cmd.action do |_, options, _|
-      Recot::Commands.start(options[:port])
+      Recot::Commands.start(options[:port], options[:open])
     end
   end
 
