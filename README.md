@@ -133,6 +133,15 @@ theme: "white"
 ```
 
 
+> ProjectName
+
+You can set a project name for evidecnce.
+
+Set the following in 'config.yml'.
+```yml
+project_name: "Your project name"
+```
+
 ## Licence
 
 [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
