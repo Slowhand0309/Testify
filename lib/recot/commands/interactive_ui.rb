@@ -17,7 +17,7 @@ module Recot
         count = 1
         loop do
 
-          print "[#{count}](recot) > "
+          print "\e[33m[#{count}](recot) > \e[0m"
           input_str = STDIN.gets.chomp
           case input_str
           when /[Ee]xit/
