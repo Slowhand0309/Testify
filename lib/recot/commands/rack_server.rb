@@ -7,11 +7,8 @@ module Recot
   module Commands
     class RackServer
 
-      DEF_PORT = 9292
-
-      def initialize(port = nil)
+      def initialize(port)
         @port = port
-        @port ||= DEF_PORT
       end
 
       def run

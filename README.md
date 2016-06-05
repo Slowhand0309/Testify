@@ -20,11 +20,41 @@ gem install recot
 ```
 ## Usage
 
+#### Recot command
+
+```sh
+$ rect <command>
+```
+
+|Command|Description|
+|:------|:----------|
+|start|Start recot to collect evidence.|
+|cleanup|Clean up cache.|
+|destroy|Delete all file.|
+
+If you want to delete cacche.
+run the following command:
+
+```sh
+$ recot cleanup
+```
+
+If you want to delete all file and directory,
+run the following command:
+
+```sh
+$ recot destroy
+Sure you want to delete all the files? [y/N] > y
+Removed all dependency files.
+```
+
+#### Start recot
+
 To begin the test with the following command:
 
 ```sh
 $ recot start
-Start recot ver 0.2.0
+Start recot ver 0.2.1
 
     ____                  __
    / __ \___  _________  / /
@@ -32,6 +62,17 @@ Start recot ver 0.2.0
  / _, _/  __/ /__/ /_/ / /
 /_/ |_|\___/\___/\____/\__/
 ```
+
+###### Options
+
+`recot start` command has the following options:
+
+|Option|Command|Description|Default|
+|:-----|:------|:----------|:------|
+|port|-p, --port|Set server port.|9292|
+|open|-o, --open|Open top page by default browser.|nil|
+
+###### Interactive command
 
 Enter the test number as follows:
 
@@ -72,6 +113,21 @@ access the http://localhost:9292/__output/index.html
 When you click the image to display the popup.
 ![img003](http://slowhand0309.github.io/images/recot/popup.png)
 
+If you want to output the contents of the clipboard as a log, run the following command:
+
+```sh
+[2](recot) > paste <filename>
+```
+
+e.g.
+
+※ State that has already been copied to the clipboard.
+```sh
+[1](recot) > A100
+[2](recot) > paste copy.log
+```
+`copy.log` is output to the location of the `__output/resource/A100/`.
+
 If you want to delete the previous evidence, run the following command:
 
 ```sh
@@ -90,12 +146,6 @@ If you want to test the end, run the following command:
 [4](recot) > exit
 ```
 
-If you want to delete all file and directory,
-run the following command:
-
-```sh
-[5](recot) > destroy
-```
 
 ## Configuration
 
@@ -124,6 +174,15 @@ Set the following in `config.yml`.
 theme: "white"
 ```
 
+
+> ProjectName
+
+You can set a project name for evidecnce.
+
+Set the following in 'config.yml'.
+```yml
+project_name: "Your project name"
+```
 
 ## Licence
 
