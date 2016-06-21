@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "wdm", ">= 0.1.0" if Gem.win_platform?
   spec.add_runtime_dependency "clipboard", "~> 1.1"
   spec.add_runtime_dependency "ffi", "~> 1.9" if Gem.win_platform?
+  spec.add_runtime_dependency "axlsx", "~> 2.0"
 
   # Development Dependencies
   spec.add_development_dependency "rake", "~> 10.0"
