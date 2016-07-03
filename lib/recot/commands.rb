@@ -6,6 +6,7 @@ require 'recot/commands/interactive_ui'
 require 'recot/commands/listener'
 require 'recot/utils/recot_util'
 require 'recot/utils/browser_util'
+require 'recot/utils/export_util'
 
 module Recot
   module Commands
@@ -37,6 +38,14 @@ module Recot
 
       # Start interactive operate.
       InteractiveUi.new.start
+    end
+
+    # Export.
+    #
+    # == Parameters:
+    # Export format.
+    def self.export(format)
+      Utils::ExportUtil.execute(format)
     end
 
     # All clear.
