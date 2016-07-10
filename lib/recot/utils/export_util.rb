@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'axlsx'
+require 'recot/config'
 
 module Recot
   module Utils
@@ -43,18 +44,37 @@ module Recot
 
         # Fetch output resources.
         def fetch
+          evidences = {}
           Dir::glob("#{Recot.resources_dir}/*").each do |d|
             if File::ftype(d) == "directory"
-              puts d
+              images = Dir::entries(d).select{|e| File::ftype("#{d}/#{e}") == 'file'}
+              evidences[File.basename(d)] = images
             end
           end
+          # Generate spreadsheet
+          name = Config.instance.project_name
+          name = 'recot' if name.empty?
+          to_spreadsheet("#{name}.xlsx", evidences)
         end
 
         # Export spreadsheet.
         #
         # == Parameters:
         # A spreadsheet file name
-        def to_spreadsheet(filename)
+        def to_spreadsheet(filename, evidences)
+          p = Axlsx::Package.new
+          wb = p.workbook
+
+          # Loop all evidences.
+          evidences.each do |no, evi|
+            # Pie Chart
+              wb.add_worksheet(:name => no) do |sheet|
+                # TODO to debug
+                sheet.add_row ["First", "Second", "Third", "Fourth"]
+                sheet.add_row [1, 2, 3, 4]
+              end
+          end
+          p.serialize(filename)
         end
       end
 
