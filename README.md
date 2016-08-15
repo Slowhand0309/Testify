@@ -29,8 +29,16 @@ $ rect <command>
 |Command|Description|
 |:------|:----------|
 |start|Start recot to collect evidence.|
+|export|Export to another format.|
 |cleanup|Clean up cache.|
 |destroy|Delete all file.|
+
+If you want to export to another format, run the following command:
+
+```sh
+$ recot export
+```
+※ Yet now, `.xlsx` format only
 
 If you want to delete cacche.
 run the following command:
