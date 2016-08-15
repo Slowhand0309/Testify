@@ -6,6 +6,10 @@ module Recot
   module Utils
     class ExportUtil
 
+      IMAGE_SIZE_WIDTH = 512
+      IMAGE_SIZE_HEIGHT = 512
+      IMAGE_SIZE_ROWS = 25
+
       class << self
 
         # Execute export.
@@ -22,6 +26,8 @@ module Recot
 
           # Fetch resoures.
           fetch
+
+          puts "Export Success!!"
         end
 
         # Validate for export.
@@ -47,7 +53,12 @@ module Recot
           evidences = {}
           Dir::glob("#{Recot.resources_dir}/*").each do |d|
             if File::ftype(d) == "directory"
-              images = Dir::entries(d).select{|e| File::ftype("#{d}/#{e}") == 'file'}
+              #images = Dir::entries(d).select{|e| File::ftype("#{d}/#{e}") == 'file'}
+              images = []
+              Dir::entries(d).each do |e|
+                path = "#{d}/#{e}"
+                images << path if File::ftype(path) == 'file'
+              end
               evidences[File.basename(d)] = images
             end
           end
@@ -67,12 +78,28 @@ module Recot
 
           # Loop all evidences.
           evidences.each do |no, evi|
-            # Pie Chart
-              wb.add_worksheet(:name => no) do |sheet|
-                # TODO to debug
-                sheet.add_row ["First", "Second", "Third", "Fourth"]
-                sheet.add_row [1, 2, 3, 4]
+
+            # Add worksheet.
+            wb.add_worksheet(:name => no) do |sheet|
+
+              evi.each_with_index do |e, index|
+                sheet.add_row [File.basename(e)]
+                sheet.column_info.first.width = 5
+
+                # Add images.
+                sheet.add_image(:image_src => e, :noSelect => true, :noMove => true) do |image|
+                  image.width = IMAGE_SIZE_WIDTH
+                  image.height = IMAGE_SIZE_HEIGHT
+                  image.start_at 1, 1 + index * IMAGE_SIZE_ROWS
+
+                end
+                (IMAGE_SIZE_ROWS - 1).times {
+                  sheet.add_row
+                }
+
               end
+            end
+
           end
           p.serialize(filename)
         end
