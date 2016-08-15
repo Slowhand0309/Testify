@@ -5,7 +5,7 @@
 Recot is a tool to gather evidence of the test.
 
 [![Gem Version](https://badge.fury.io/rb/recot.svg)](https://badge.fury.io/rb/recot)
-![travis-ci](https://travis-ci.org/Slowhand0309/recot.svg?branch=master)
+[![Build Status](https://travis-ci.org/Slowhand0309/recot.svg?branch=master)](https://travis-ci.org/Slowhand0309/recot)
 
 ## Description
 Create evidence document for test to easy.<br>
@@ -29,8 +29,16 @@ $ rect <command>
 |Command|Description|
 |:------|:----------|
 |start|Start recot to collect evidence.|
+|export|Export to another format.|
 |cleanup|Clean up cache.|
 |destroy|Delete all file.|
+
+If you want to export to another format, run the following command:
+
+```sh
+$ recot export
+```
+※ Yet now, `.xlsx` format only
 
 If you want to delete cacche.
 run the following command:
@@ -54,7 +62,7 @@ To begin the test with the following command:
 
 ```sh
 $ recot start
-Start recot ver 0.2.1
+Start recot ver 0.2.2
 
     ____                  __
    / __ \___  _________  / /
