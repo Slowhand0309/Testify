@@ -62,7 +62,7 @@ To begin the test with the following command:
 
 ```sh
 $ recot start
-Start recot ver 0.2.1
+Start recot ver 0.2.2
 
     ____                  __
    / __ \___  _________  / /
