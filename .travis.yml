@@ -1,5 +1,8 @@
 language: ruby
 rvm:
-  - "1.9.3"
-  - "2.0.0"
-  - "2.1.0"
+- 1.9.3
+- 2.0.0
+- 2.1.0
+notifications:
+  slack:
+    secure: aH73z0frgrYxEw1FQj2Ae/2Pw8iOJiZtMytXJoN6HlH/PNwtSHs9/p1Uvg0a+E7cillHVwpsw4AiTK1+uHPkpWxFhiBZjhruLKR24+F+LLfBdnZTnaaEWTLSVUTNgCL64B0m6UHYo8hp1q41hZD4RqWeHadIcCPfIaANuCewgd302xfTCYI7ZQy5MC1iupNhOAHdDsv023a/gEX8GHHF1YUZcPX6QRScc3Q+PMbN+uviAJh8zL+rgOD3wjBKGCe+wyvryJ+12dXLXZpcm3wDFPEpZfWUEr+M2dGkrwhTmbGE5CGLCPdT2wbKkc+inLANV3MVBLDTCspfc29xpNyeQlN6+FZTsZzKvJuZUWkC+TB9lcKZay90vHHgdk4VmGjmjTo6M7jjFQXvwVOqGW/MWIGcsko8jkp3a/uHhNX3riL7gWi9OtqJBnawM9p3fmphCdHnpbRa0G3UqgJ+CIrSIu2+cJ9t7eylOar0dEm2wVudYWacsso9pWDU4X8JZIGTGy7BupiJcc3ccsK50kxYqIftkkoFtExJCdhldUYPONBIGOaFY81CL3Amq7UJlP93Lps5tAqjHVb5ya/H0I/RpqEMJEB58vzMizdETnqGb9K8NLjuNje3JcNr1LfaASAEziC+NkVwfCHJCdd9/VJorzxBMug6Iw3glU6qq4Rh0yw=
