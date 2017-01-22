@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Recot::VERSION
   spec.authors       = ["slowhand0309"]
   spec.email         = ["slowhand0309@gmail.com"]
-  spec.required_ruby_version = ">= 1.9.3"
+  spec.required_ruby_version = ">= 2.1.0"
 
   spec.summary       = 'Recot is a tool to gather evidence of the test'
   spec.description   = 'To generate a test result of documents in HTML format automatically'
